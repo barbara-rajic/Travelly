@@ -1,0 +1,362 @@
+/* Global styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-size: 2.6rem;
+}
+
+h2 {
+  font-size: 3.8rem;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: normal;
+  margin: 5rem 0rem;
+}
+
+h4,
+h5 {
+  font-size: 2.8rem;
+}
+
+li,
+button,
+label,
+input,
+p {
+  font-size: 2rem;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+button {
+  padding: 2rem 6rem;
+  background-color: #4c6e97;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.5s ease-in-out; /*transition to another color when hover*/
+}
+
+button:hover {
+  background-color: #27394e;
+}
+
+/*Header*/
+
+.main-head {
+  background: #131c27;
+  color: white;
+  position: sticky;
+  top: 0px;
+  z-index: 3;
+}
+
+nav {
+  min-height: 10vh;
+  width: 90%;
+  margin: auto;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /*wrap in next row when size reduces*/
+}
+
+#logo {
+  flex: 2 1 40rem;
+  font-family: "Pattaya", sans-serif;
+  font-weight: 400;
+}
+
+.main-head nav ul {
+  flex: 1 1 40rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+/* Section HERO*/
+
+.hero {
+  min-height: 90vh;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.8 /*transparency*/),
+      transparent
+    ),
+    url(./img/landing-page.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/*Section LOCATIONS*/
+
+#locations {
+  min-height: 90vh;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.7 /*transparency*/),
+      transparent
+    ),
+    url(./img/new-york-page.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  position: relative; /*Add position to place cloud*/
+  overflow: hidden; /*CloudAnimation hidden when go out of the section*/
+}
+
+.locations-head {
+  width: 90%;
+  margin: auto;
+}
+
+.locations-head h2 {
+  text-decoration: underline;
+  text-decoration-thickness: 0.5rem;
+}
+
+.cloud {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  
+}
+
+.moving-cloud1 {
+  z-index: -1;
+  animation: CloudAnimations 3s infinite alternate ease-in-out;
+}
+
+.moving-cloud2 {
+  top: 20%;
+  z-index: -2; /*To put img behinde other img*/
+  opacity: 0.5;
+  animation: CloudAnimations 4s infinite alternate ease-in-out;
+}
+
+@keyframes CloudAnimations {
+  from {
+    transform: translate(10%, -10%);
+  }
+  to {
+    transform: translate(0%, 0%);
+  }
+}
+
+/*Section BENEFITS*/
+
+.benefits-head {
+  background: #343c44;
+  color: white;
+  min-height: 10vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.cards {
+  min-height: 70vh;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+}
+
+.card {
+  flex: 1 1 25rem;
+  min-height: 40vh;
+  margin: 2rem 5rem;
+  box-shadow: 0rem -0.5rem 1rem rgba(19, 28, 39, 0.1),
+    0rem 2rem 2rem rgba(19, 28, 39, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card:hover {
+  animation: shake 1s ease-out;
+  animation-iteration-count: 1;
+}
+
+@keyframes shake {
+  from {transform: rotate(0deg);}
+  50% {transform: rotate(-2deg);}
+  to { transform: rotate(0deg); }
+}
+
+.cards img {
+  background: white;
+  height: 10rem;
+  padding: 1rem;
+}
+
+.cards h4,
+.cards p {
+  padding: 2rem;
+}
+
+/*Section FORM*/
+
+#contact {
+  min-height: 90vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), transparent),
+    url(./img/contact-mountain.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-box {
+  width: 40%;
+  background: rgba(19, 28, 39, 0.8);
+  color: white;
+  border-radius: 20px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-head {
+  text-align: center;
+  padding: 3rem;
+}
+
+.contact-name,
+.contact-email {
+  padding: 3rem;
+  text-align: center;
+}
+
+.contact-name label,
+.contact-email label {
+  margin: 0rem 2rem;
+  padding: 1rem 3rem;
+}
+
+.contact-form button {
+  width: 100%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+/*Footer*/
+
+footer {
+  background: #131c27;
+  color: black;
+}
+
+.footer-wrapper {
+  min-height: 10vh;
+  width: 90%;
+  margin: auto;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+footer h5 {
+  flex: 2 1 40rem;
+}
+
+footer ul {
+  flex: 1 1 40rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+footer img {
+  max-height: 4rem;
+  opacity: 0.8;
+}
+
+footer img:hover {
+  opacity: 1;
+}
+
+/*When size of viewport is reduced:*/
+@media screen and (max-width: 950px) {
+  html {
+    font-size: 45%; /*Reduce font size*/
+  }
+  /*Section HERO*/
+  nav {
+    align-items: center; /*center both items when wrap*/
+  }
+
+  #logo {
+    text-align: center; /*Center logo text*/
+    padding: 2rem;
+  }
+
+  /*Section LOCATIONS*/
+  .locations-head h3 {
+    padding: 2rem;
+    background: rgba(19, 28, 39, 0.8);
+    color: white;
+  }
+
+  .cloud {
+    height: 70rem;
+  }
+
+  /*Section CONTACTS*/
+
+  .contact-box,
+  .contact-name,
+  .contact-email {
+    width: 70%;
+  }
+
+  /*Footer*/
+
+  footer h5 {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  footer ul {
+    padding: 1rem;
+  }
+}
